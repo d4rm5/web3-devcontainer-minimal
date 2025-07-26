@@ -23,7 +23,7 @@
     
     "forwardPorts": [3000, 8545],
     
-    "postCreateCommand": "npm install -g @foundry-rs/foundry-toolchain hardhat @openzeppelin/contracts",
+    "postCreateCommand": "curl -L https://foundry.paradigm.xyz | bash && source ~/.bashrc && foundryup && npm install -g hardhat @openzeppelin/contracts",
     
     "remoteUser": "node",
     
