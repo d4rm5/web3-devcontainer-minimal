@@ -1,6 +1,6 @@
 {
     "name": "Minimal Web3 Development",
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
     
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
@@ -10,7 +10,6 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "JuanBlanco.solidity",
                 "NomicFoundation.hardhat-solidity",
                 "ms-vscode.vscode-json",
                 "eamodio.gitlens"
@@ -23,8 +22,7 @@
     
     "forwardPorts": [3000, 8545],
     
-    "postCreateCommand": "curl -L https://foundry.paradigm.xyz | bash && source ~/.bashrc && foundryup && npm install -g hardhat @openzeppelin/contracts",
-    
+    "postCreateCommand": "bash -c 'curl -L https://foundry.paradigm.xyz | bash && export PATH=\"$HOME/.foundry/bin:$PATH\" && foundryup && npm install -g hardhat && npm install @openzeppelin/contracts'",   
     "remoteUser": "node",
     
     "mounts": [
